@@ -3,11 +3,8 @@ package primesnumber;
 import java.util.Scanner;
 
 public class PrimeNumber {
-	public static void main(String[] args) {        
-
-        
-        int control = 0;
-        
+	public static void main(String[] args) {                
+        int control = 0;        
         for(int i=2; i<=20;i++){
             
             for(int j=2;j<i;j++){                
@@ -16,7 +13,6 @@ public class PrimeNumber {
                     control = 1;
                 }
             }
-
             if(control == 0){
                System.out.println(i);
             }else{
