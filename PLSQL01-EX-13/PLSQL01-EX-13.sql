@@ -1,7 +1,7 @@
 CREATE OR REPLACE DIRECTORY CTEST AS 'C:\TEST';
 GRANT READ,WRITE ON DIRECTORY CTEST TO PUBLIC; 
 DECLARE
-  out_File  UTL_FILE.FILE_TYPE;
+  out_file  UTL_FILE.FILE_TYPE;
 BEGIN
 DECLARE 
 emp_id EMPLOYEES.EMPLOYEE_ID%TYPE;
@@ -12,7 +12,7 @@ SELECT EMPLOYEE_ID,FIRST_NAME,SALARY INTO emp_id,first_name,highest_salary
 FROM EMPLOYEES
 WHERE SALARY=(SELECT MAX(SALARY)FROM EMPLOYEES);
 
-  out_File := UTL_FILE.FOPEN('CTEST', 'testing.txt' , 'W');
+  out_file := UTL_FILE.FOPEN('CTEST', 'testing.txt' , 'W');
   UTL_FILE.PUT_LINE(out_file ,'ID of him '|| emp_id);
   UTL_FILE.PUT_LINE(out_file ,'Name of him '|| first_name);
   UTL_FILE.PUT_LINE(out_file ,'Salary of him ' || highest_salary);
