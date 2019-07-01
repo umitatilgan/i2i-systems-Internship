@@ -1,0 +1,9 @@
+import csv
+with open('text_manipulation.csv','r') as csv_file:
+    csv_reader=csv.reader(csv_file)
+    next(csv_reader)
+    for line in csv_reader:
+        print("Telefon No->",line[0],
+              "Tarih->",line[1],
+              "Tip->",line[2],
+              "Süre->",line[3],
